@@ -23,7 +23,7 @@ You are a highly proficient Python engineer and TUI developer. Your task is to d
       - `!`: Posting 1 amount  
       - `2`: Posting 2 account  
       - `@`: Posting 2 amount  
-      Each hot-key opens a small modal (`ModalScreen` + `Input`). When the user presses Enter, a callback updates the in-memory transaction and immediately re-renders the view.  
+      Each hot-key opens a small modal which allows the user to edit the value and save changes. The transaction should update after editing. 
 
 3. **Session Persistence**  
    - Store the list of transactions and current index in a JSON side-car (`.import-session.json`)
