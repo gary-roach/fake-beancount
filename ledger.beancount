@@ -1,0 +1,39 @@
+; ledger.beancount  – sample skeleton
+; Currency
+2020-01-01 commodity USD
+  name: "US Dollar"
+
+; ------------------------------------------------------------
+; Asset and Expense accounts the stubs reference
+; ------------------------------------------------------------
+2020-01-01 open Assets:Checking:Main             USD
+2020-01-01 open Assets:Savings:Emergency         USD
+2020-01-01 open Income:Salary                    USD
+2020-01-01 open Expenses:Food:Restaurants        USD
+2020-01-01 open Expenses:Health:Pharmacy         USD
+
+; --- fava insert markers (one per “main” account) ----------
+2020-01-01 custom "fava-option" "insert-entry" "Assets:Checking:Main"
+2020-01-01 custom "fava-option" "insert-entry" "Assets:Savings:Emergency"
+2020-01-01 custom "fava-option" "insert-entry" "Income:Salary"
+2020-01-01 custom "fava-option" "insert-entry" "Expenses:Food:Restaurants"
+2020-01-01 custom "fava-option" "insert-entry" "Expenses:Health:Pharmacy"
+
+; ------------------------------------------------------------
+; Seed balances
+; ------------------------------------------------------------
+2025-01-01 balance Assets:Checking:Main          2,000.00 USD
+2025-01-01 balance Assets:Savings:Emergency     10,000.00 USD
+
+; ------------------------------------------------------------
+; A couple of sample hand-written transactions
+; ------------------------------------------------------------
+2025-03-15 * "Acme Corp" "Paycheck"
+  Assets:Checking:Main                2,500.00 USD
+  Income:Salary                       -2,500.00 USD
+
+2025-03-18 * "Big Burger" "Lunch"
+  Expenses:Food:Restaurants               12.45 USD
+  Assets:Checking:Main                   -12.45 USD
+
+; End of file
