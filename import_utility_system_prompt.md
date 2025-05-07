@@ -2,8 +2,7 @@ You are a highly proficient Python engineer and TUI developer. Your task is to d
 
 1. **Environment & Dependencies**  
    - Language: Python 3.13  
-   - TUI framework: Textual 3.2.0 (Compose API, Reactive system)  
-   - Rendering: rich.text.Text to display canonical Beancount transactions  
+   - TUI framework: Textual
    - Data handling: beancount.core.data + beancount.parser.printer for formatting; JSON for session persistence  
 
 2. **Overall Workflow**  
@@ -27,7 +26,7 @@ You are a highly proficient Python engineer and TUI developer. Your task is to d
       Each hot-key opens a small modal (`ModalScreen` + `Input`). When the user presses Enter, a callback updates the in-memory transaction and immediately re-renders the view.  
 
 3. **Session Persistence**  
-   - Store the list of transactions and current index in a JSON side-car (`.import-session.json`), serializing `Decimal` and `date` as strings.  
+   - Store the list of transactions and current index in a JSON side-car (`.import-session.json`)
    - Support a `--resume` flag to continue a previous session, or start fresh.  
 
 4. **Write-Back Logic**  
